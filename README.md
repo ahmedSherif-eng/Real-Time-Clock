@@ -2,7 +2,7 @@
 
 This project is an AVR-based real-time clock that uses an Atmega 32 microcontroller uses internal 8 Mhz clock, an LCD, a keypad, and a 7-segment display to display time and allow users to set the clock.
 
-<b><font face="Arial" >Hardware Requirements</font></b>  
+## Hardware Requirements
 - Atmega 32 microcontroller  
 - LCD Display  
 - Keypad  
@@ -10,13 +10,12 @@ This project is an AVR-based real-time clock that uses an Atmega 32 microcontrol
 - Capacitors and resistors  
 - Breadboard or PCB  
 - Jumper wires  
-
-<b><font face="Arial" >Software Requirements</font></b>  
+## Software Requirements 
 - AVR Studio 6  
 - WinAVR  
 - Proteus Design Suite (for simulation)    
 
-<b><font face="Arial" >Features</font></b>  
+## Features
 - Real-time clock with hour, minute, and second display  
 - User can set the time using the keypad  
 - 7-segment display for clock display  
@@ -28,7 +27,7 @@ This project is an AVR-based real-time clock that uses an Atmega 32 microcontrol
 
 ![image](https://user-images.githubusercontent.com/72231218/237036744-8032acf3-de12-4b06-b236-a877a16b2138.png)
 
-<b><font face="Arial" >Setup</font></b>  
+## Setup
 - Connect the Atmega 32 microcontroller to the breadboard or PCB.    
 - Connect the capacitors and resistors as required by the crystal oscillator.  
 - Connect the LCD display to the microcontroller's PORTC and POTRB pins.  
@@ -36,7 +35,7 @@ This project is an AVR-based real-time clock that uses an Atmega 32 microcontrol
 - Connect the 7-segment display to the microcontroller's PORTA pins.  
 - Connect power and ground to the appropriate pins.  
 
-<b><font face="Arial" >Usage</font></b> 
+## Usage
 - Compile the code using AVR Studio 6 and WinAVR.  
 - Upload the hex file to the Atmega 32 microcontroller.  
 - Power on the circuit.  
@@ -45,7 +44,7 @@ This project is an AVR-based real-time clock that uses an Atmega 32 microcontrol
 - Use the keypad to set the hour, minute, and second values.  
 - The clock will now display the updated time.  
  
-<b><font face="Arial" >Credits</font></b>   
+## Credits
 This project was developed by Ahmed Sherif as a part of Microcontroller Course at Helwan University. 
 
 
