@@ -31,9 +31,9 @@ This project is an AVR-based real-time clock that uses an Atmega 32 microcontrol
 <b><font face="Arial" >Setup</font></b>  
 - Connect the Atmega 32 microcontroller to the breadboard or PCB.    
 - Connect the capacitors and resistors as required by the crystal oscillator.  
-- Connect the LCD display to the microcontroller's PORTC pins.  
-- Connect the keypad to the microcontroller's PORTA pins.  
-- Connect the 7-segment display to the microcontroller's PORTB pins.  
+- Connect the LCD display to the microcontroller's PORTC and POTRB pins.  
+- Connect the keypad to the microcontroller's PORTD pins.  
+- Connect the 7-segment display to the microcontroller's PORTA pins.  
 - Connect power and ground to the appropriate pins.  
 
 <b><font face="Arial" >Usage</font></b> 
@@ -41,9 +41,8 @@ This project is an AVR-based real-time clock that uses an Atmega 32 microcontrol
 - Upload the hex file to the Atmega 32 microcontroller.  
 - Power on the circuit.  
 - The clock will start running automatically.  
-- To set the clock, press the '#' button on the keypad.  
+- To set the clock, press the '1' button on the keypad.  
 - Use the keypad to set the hour, minute, and second values.  
-- Press the '*' button to save the new time.  
 - The clock will now display the updated time.  
  
 <b><font face="Arial" >Credits</font></b>   
