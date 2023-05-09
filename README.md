@@ -1,4 +1,4 @@
-<b><font face="Arial" >Real-Time Clock AVR Project</font></b>
+# Real-Time Clock AVR Project
 
 This project is an AVR-based real-time clock that uses an Atmega 32 microcontroller uses internal 8 Mhz clock, an LCD, a keypad, and a 7-segment display to display time and allow users to set the clock.
 
