@@ -22,9 +22,14 @@ This project is an AVR-based real-time clock that uses an Atmega 32 microcontrol
 - 7-segment display for clock display  
 - LCD display for setting display  
 
+
+![image](https://user-images.githubusercontent.com/72231218/237036530-c3dcb345-94ca-4383-9a3d-12559e7950ef.png)
+
+
+![image](https://user-images.githubusercontent.com/72231218/237036744-8032acf3-de12-4b06-b236-a877a16b2138.png)
+
 <b><font face="Arial" >Setup</font></b>  
-- Connect the Atmega 32 microcontroller to the breadboard or PCB.  
-- Connect the 16MHz crystal oscillator to the microcontroller's XTAL1 and XTAL2 pins.  
+- Connect the Atmega 32 microcontroller to the breadboard or PCB.    
 - Connect the capacitors and resistors as required by the crystal oscillator.  
 - Connect the LCD display to the microcontroller's PORTC pins.  
 - Connect the keypad to the microcontroller's PORTA pins.  
