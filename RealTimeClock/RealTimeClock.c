@@ -12,28 +12,27 @@
 #include "MCAL/Timer.h"
 #include "HAl/KEYPAD.h"
 #include "HAl/LCD.h"
+#include "HAl/7Segment.h"
 
 volatile uint8_t seconds=0;
 volatile uint8_t minutes=0;
 volatile uint8_t hours=0;
-uint8_t numbers[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x47,0x7f,0x6f,0x77,0x7f,0x39,0x3f,0x79,0x71};
+extern unsigned char num[];
 int main(void)
 { 
-	DIO_SET_PORT_DIRECTION('a',1);
-	DIO_SET_PIN_DIRECTION('c',4,1);
-	DIO_SET_PIN_DIRECTION('c',5,1);
-	DIO_SET_PIN_DIRECTION('B',3,1);
-	DIO_SET_PIN_DIRECTION('B',4,1);
-	DIO_SET_PIN_DIRECTION('B',5,1);
-	DIO_SET_PIN_DIRECTION('B',6,1);
-	DIO_SET_PIN_DIRECTION('B',7,1);
-	DIO_WRITE('c',4,1);
-	DIO_WRITE('c',5,1);
-	DIO_WRITE('B',3,1);
-	DIO_WRITE('B',4,1);
-	DIO_WRITE('B',5,1);
-	DIO_WRITE('B',6,1);
-	DIO_WRITE('B',7,1);
+	seg_vinit('a');
+	seg_set_enable_pin('c',4);
+	seg_set_enable_pin('c',5);
+	seg_set_enable_pin('B',4);
+	seg_set_enable_pin('B',5);
+	seg_set_enable_pin('B',6);
+	seg_set_enable_pin('B',7);
+	seg_disable('c',4);
+	seg_disable('c',5);
+	seg_disable('B',4);
+	seg_disable('B',5);
+	seg_disable('B',6);
+	seg_disable('B',7);
 	LCD_vInit();
 	Keypad_vInt('d');
 	LCD_vSend_string("Press 1 to");
@@ -56,33 +55,37 @@ int main(void)
 		}
 		if(hours>=24)
 			hours=0;
-		CLEAR(PORTC,4);
-		SET(PORTC,5);
-		PORTA=numbers[seconds%10];
-		_delay_ms(1);
-		CLEAR(PORTC,5);
-		SET(PORTC,4);
-		PORTA=numbers[seconds/10];
+		seg_enable('c',4);
+		seg_disable('c',5);
+		seg_vwrite('a',seconds%10);
 		_delay_ms(1);
 		
-		SET(PORTC,5);	
-		CLEAR(PORTB,4);
-		PORTA=numbers[minutes%10];
-		_delay_ms(1);
-		CLEAR(PORTB,5);
-		SET(PORTB,4);
-		PORTA=numbers[minutes/10];
+		seg_enable('c',5);
+		seg_disable('c',4);
+		seg_vwrite('a',seconds/10);
 		_delay_ms(1);
 		
-		SET(PORTB,5);
-		CLEAR(PORTB,6);
-		PORTA=numbers[hours%10];
+		seg_disable('c',5);
+		seg_enable('b',4);
+		seg_vwrite('a',minutes%10);
 		_delay_ms(1);
-		CLEAR(PORTB,7);
-		SET(PORTB,6);
-		PORTA=numbers[hours/10];
+		
+		seg_enable('b',5);
+		seg_disable('b',4);
+		seg_vwrite('a',minutes/10);
 		_delay_ms(1);
-		SET(PORTB,7);
+		
+		seg_disable('b',5);
+		seg_enable('b',6);
+		seg_vwrite('a',hours%10);
+		_delay_ms(1);
+		
+		seg_enable('b',7);
+		seg_disable('b',6);
+		seg_vwrite('a',hours/10);
+		_delay_ms(1);
+		
+		seg_disable('b',7);
 		_delay_ms(5);
 			val=KeypadRead('d');
 			if(val=='1')

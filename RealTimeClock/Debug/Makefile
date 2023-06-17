@@ -39,6 +39,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../HAl/Keypad.c \
 ../HAl/LCD.c \
+../HAl/Segment.c \
 ../MCAL/DIO_DRIVER.c \
 ../MCAL/Timer.c \
 ../RealTimeClock.c
@@ -53,6 +54,7 @@ ASM_SRCS +=
 OBJS +=  \
 HAl/Keypad.o \
 HAl/LCD.o \
+HAl/Segment.o \
 MCAL/DIO_DRIVER.o \
 MCAL/Timer.o \
 RealTimeClock.o
@@ -61,6 +63,7 @@ RealTimeClock.o
 OBJS_AS_ARGS +=  \
 HAl/Keypad.o \
 HAl/LCD.o \
+HAl/Segment.o \
 MCAL/DIO_DRIVER.o \
 MCAL/Timer.o \
 RealTimeClock.o
@@ -69,6 +72,7 @@ RealTimeClock.o
 C_DEPS +=  \
 HAl/Keypad.d \
 HAl/LCD.d \
+HAl/Segment.d \
 MCAL/DIO_DRIVER.d \
 MCAL/Timer.d \
 RealTimeClock.d
@@ -77,6 +81,7 @@ RealTimeClock.d
 C_DEPS_AS_ARGS +=  \
 HAl/Keypad.d \
 HAl/LCD.d \
+HAl/Segment.d \
 MCAL/DIO_DRIVER.d \
 MCAL/Timer.d \
 RealTimeClock.d
@@ -91,6 +96,8 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
 
 
 
